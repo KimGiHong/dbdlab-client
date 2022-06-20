@@ -14,6 +14,7 @@ export function GlobalStyle() {
           -moz-osx-font-smoothing: grayscale;
           -webkit-font-smoothing: antialiased;
           font-smoothing: antialiased;
+          background-color: #F8F8F8;
         }
       `}
     />
