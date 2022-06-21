@@ -12,12 +12,7 @@ import {
 import { Bar, Doughnut } from 'react-chartjs-2';
 import * as S from '../../shared/ChartStyle';
 import { getCovid19GenAgeCaseInfJson } from '../../api/Api';
-
-interface ChartProps {
-  confCase: string,
-  stateDt: string,
-  gubun: string
-}
+import { LineChartProps } from '../../interface/chart.props';
 
 ChartJS.register(
   CategoryScale,
@@ -55,7 +50,7 @@ const returnColor = (age: string) => {
 }
 
 export function BottomChart() {
-  const [ChartData,setChartData] = useState<ChartProps[]>([]);
+  const [ChartData,setChartData] = useState<LineChartProps[]>([]);
   const labels = ['11/01', '11/02', '11/03', '11/04', '11/05', '11/06', '11/07'];
   const [selectValue, setSelectValue] = useState<string>('20211101');
   const onChangeSelect = (e: { target: { value: React.SetStateAction<string>; }; }) => {

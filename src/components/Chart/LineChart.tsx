@@ -12,12 +12,8 @@ import {
 import { Line } from 'react-chartjs-2';
 import * as S from '../../shared/ChartStyle';
 import { getCovid19InfStateJson } from '../../api/Api';
+import { GenAgeChartProps } from '../../interface/chart.props';
 
-interface ChartDataProps {
-  decideCnt: string,
-  stateDt: string,
-  stateTime: string
-}
 
 ChartJS.register(
   LinearScale,
@@ -39,7 +35,7 @@ const options = {
 };
 
 export function LineChart() {
-  const [lineChartData,setLineChartData] = useState<ChartDataProps[]>([]);
+  const [lineChartData,setLineChartData] = useState<GenAgeChartProps[]>([]);
   const labels = lineChartData.map((item) => item.stateDt.replace(/\B(?=(\d{2})+(?!\d))/g,'/').substring(6,11)).sort();
 
   const data = {
