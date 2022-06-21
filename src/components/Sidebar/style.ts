@@ -9,6 +9,10 @@ export const Positioner = styled.div`
     top: 0;
 `;
 
+export const SidebarContainer = styled.div`
+    width: 252px;
+    height: 100%;
+`;
 
 export const LogoWrapper = styled.div`
     width: 100%;

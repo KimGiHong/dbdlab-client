@@ -20,7 +20,7 @@
       "components/*": ["./components/*"],
       "hooks/*": ["./hooks/*"],
       "shared/*": ["./shared/*"]
-    }
+    },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
