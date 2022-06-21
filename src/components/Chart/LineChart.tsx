@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   LinearScale,
@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import * as S from '../../shared/ChartStyle';
+import { getCovid19InfStateJson } from '../../api/Api';
 
 ChartJS.register(
   LinearScale,
@@ -22,22 +23,11 @@ ChartJS.register(
   Tooltip
 );
 
-const labels = ['11/01', '11/02', '11/03', '11/04', '11/05', '11/06', '11/07'];
-
-const data = {
-  labels,
-  datasets: [
-    {
-      type: 'line' as const,
-      backgroundColor: '#E79997',
-      borderColor: '#E79997',
-      borderWidth: 2,
-      fill: false,
-      data: [0, 200, 400, 500, 600, 300, 800],
-    },
-  ],
-
-};
+interface ChartDataProps {
+  decideCnt: string,
+  stateDt: string,
+  stateTime: string
+}
 
 const options = {
   plugins: {
@@ -49,6 +39,31 @@ const options = {
 };
 
 export const LineChart = () => {
+  const [lineChartData,setLineChartData] = useState<ChartDataProps[]>([]);
+
+  const labels = lineChartData.map((item) => item.stateDt.replace(/\B(?=(\d{2})+(?!\d))/g,'/').substring(6,11)).sort();
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        type: 'line' as const,
+        backgroundColor: '#E79997',
+        borderColor: '#E79997',
+        borderWidth: 2,
+        fill: false,
+        data: lineChartData.map((item) => item.decideCnt),
+      },
+    ],
+  
+  };
+
+  useEffect(() => {
+    getCovid19InfStateJson().then((res) => {
+      res && setLineChartData(res.data.items.item);
+    })
+  }, []);
+
   return (
     <>
       <S.ChartHeader>코로나 일자별 확진자 수</S.ChartHeader>
