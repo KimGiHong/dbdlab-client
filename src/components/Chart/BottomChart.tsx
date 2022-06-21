@@ -64,9 +64,9 @@ export function BottomChart() {
 
   //Bar Chart
   // 일자별 연령대 확진자 수
-  const barResult = (date: any, age: any) => {
+  const barResult = (date: string, age: string) => {
     return(
-      ChartData && ChartData.filter((item) => item.stateDt === date && item.gubun === age).map((item) => Number(item.confCase)).reduce(function add(sum: any, currValue: any) {
+      ChartData && ChartData.filter((item) => item.stateDt === date && item.gubun === age).map((item) => Number(item.confCase)).reduce(function add(sum: number, currValue: number) {
         return sum + currValue;
       }, 0)
     )
@@ -96,9 +96,9 @@ export function BottomChart() {
 
   // Doughnut Chart
   // 일자별 성별 확진자 수
-  const doughnutResult = (gender: any, date: any ) => {
+  const doughnutResult = (gender: string, date: string ) => {
     return(
-      ChartData && ChartData.filter((item) => item.gubun === gender && item.stateDt === date).map((item) => Number(item.confCase)).reduce(function add(sum: any, currValue: any) {
+      ChartData && ChartData.filter((item) => item.gubun === gender && item.stateDt === date).map((item) => Number(item.confCase)).reduce(function add(sum: number, currValue: number) {
         return sum + currValue;
       }, 0)
     )
