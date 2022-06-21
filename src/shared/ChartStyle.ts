@@ -13,6 +13,7 @@ export const ChartWrapper = styled.div`
   justify-content: center;
   background-color: #FFF;
   width: 100%;
+  height: 100%;
   border-right: 2px solid lightgray;
 `;
 
@@ -29,7 +30,6 @@ export const ChartHeader = styled.header`
   padding-left: 50px;
 `;
 
-
 export const Select = styled.select`
   margin-left: 90%;
   width: 8%;
@@ -38,6 +38,7 @@ export const Select = styled.select`
 export const ChartContainer = styled.div`
   margin: 50px;
   width: 700px;
+  height: 319px;
   canvas{
     background-color: #FFF;
   }

@@ -11,9 +11,10 @@ const Positioner = styled.div`
   align-items: center;
   margin-left: 280px;
   margin-top: 30px;
+  margin-bottom: 20px;
   background-color: #fff;
   width: 85%;
-  height: 95vh;
+  height: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
