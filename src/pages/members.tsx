@@ -1,10 +1,10 @@
 import SideBar from "components/Sidebar/Sidebar";
 import { NextPage } from 'next';
 
-const ResearchPage: NextPage = () => {
+const MembersPage: NextPage = () => {
     return(
       <SideBar />
     );
 }
 
-export default ResearchPage;
+export default MembersPage;

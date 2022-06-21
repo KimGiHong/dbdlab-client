@@ -13,9 +13,9 @@ const SideBar = () => {
                 <S.SidebarListWrapper>
                     <Link href="/"><a className={router.pathname === "/" ? 'active' : ''}><I.Dashboard/>Dashboard</a></Link>
                     <Link href="/research"><a className={router.pathname === "/research" ? 'active' : ''}><I.Research/>Research</a></Link>
-                    <Link href="/Members"><a className={router.pathname === "/Members" ? 'active' : ''}><I.Members/>Members</a></Link>
-                    <Link href="/Insight"><a className={router.pathname === "/Insight" ? 'active' : ''}><I.Insight/>Insight</a></Link>
-                    <Link href="/Calender"><a className={router.pathname === "/Calender" ? 'active' : ''}><I.Calender/>Calender</a></Link>
+                    <Link href="/members"><a className={router.pathname === "/members" ? 'active' : ''}><I.Members/>Members</a></Link>
+                    <Link href="/insight"><a className={router.pathname === "/insight" ? 'active' : ''}><I.Insight/>Insight</a></Link>
+                    <Link href="/calender"><a className={router.pathname === "/calender" ? 'active' : ''}><I.Calender/>Calender</a></Link>
                 </S.SidebarListWrapper>
             </S.Positioner>
             <S.SidebarContainer />
