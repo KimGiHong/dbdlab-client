@@ -46,11 +46,11 @@ export const data = {
 
 export function BarChart() {
   return (
-    <>
+    <S.ChartWrapper>
       <S.ChartHeader>일자별 연령대 확진자 수</S.ChartHeader>
       <S.ChartContainer>
         <Bar options={options} data={data} />
       </S.ChartContainer>
-    </>
+    </S.ChartWrapper>
   )
 }

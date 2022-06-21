@@ -4,6 +4,7 @@ import SideBar from 'components/Sidebar/Sidebar';
 import {LineChart} from 'components/Chart/LineChart';
 import styled from '@emotion/styled';
 import { BarChart } from 'components/Chart/BarChart';
+import { DoughnutChart } from 'components/Chart/DoughnutChart';
 
 const Positioner = styled.div`
   display: flex;
@@ -17,13 +18,22 @@ const Positioner = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
+const Flex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 const Home: NextPage = () => {
   return (
     <>
       <SideBar />
       <Positioner>
         <LineChart />
-        <BarChart />
+        <Flex>
+          <BarChart />
+          <DoughnutChart />
+        </Flex>
       </Positioner>
     </>
   );
