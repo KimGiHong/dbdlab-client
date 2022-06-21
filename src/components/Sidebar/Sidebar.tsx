@@ -18,6 +18,7 @@ const SideBar = () => {
                     <Link href="/Calender"><a className={router.pathname === "/Calender" ? 'active' : ''}><I.Calender/>Calender</a></Link>
                 </S.SidebarListWrapper>
             </S.Positioner>
+            <S.SidebarContainer />
         </>
     )
 }
