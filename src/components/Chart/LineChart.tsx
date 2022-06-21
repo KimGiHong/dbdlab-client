@@ -10,7 +10,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import * as S from './style';
+import * as S from '../../shared/ChartStyle';
 
 ChartJS.register(
   LinearScale,
@@ -48,13 +48,13 @@ const options = {
 
 };
 
-export function LineChart() {
+export const LineChart = () => {
   return (
-    <S.Positioner>
+    <>
       <S.ChartHeader>코로나 일자별 확진자 수</S.ChartHeader>
       <S.ChartContainer>
         <Line data={data} options={options}/>
       </S.ChartContainer>
-    </S.Positioner>
+    </>
   );
 }
